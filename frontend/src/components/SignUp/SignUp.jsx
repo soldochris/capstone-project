@@ -3,6 +3,8 @@ import {AiOutlineEye, AiOutlineEyeInvisible} from "react-icons/ai";
 import {RxAvatar} from "react-icons/rx"
 import styles from "../../styles/styles";
 import {Link} from "react-router-dom";
+import axios from "axios";
+import {server} from "../../server.js";
 
 const SignUp = () => {
   const [email,setEmail] = useState("");
@@ -11,15 +13,28 @@ const SignUp = () => {
   const [visible, setVisible] = useState(false);
   const [avatar, setAvatar] = useState(null);
 
-  const handleSubmit = () => {
-    console.log("Submitted");
-  };
-
   const handleFileInputChange = (event) => {
     const file = event.target.files[0];
     setAvatar(file);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const config = { headers:{"Content-Type":"multipart/form-data"}};
+
+    const newForm = new FormData();
+    
+    newForm.append("file", avatar);
+    newForm.append("name", name);
+    newForm.append("email", email);
+    newForm.append("password", password);
+
+    axios.post(`${server}/user/create-user`, newForm, config).then((res)=>{
+      console.log(res);
+    }).catch((err)=>{
+      console.log(err);
+    });
+  };
   return (
     <div className='min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8'>
       <div className='sm:mx-auto sm:w-full sm:max-w-md'>
@@ -107,7 +122,7 @@ const SignUp = () => {
                   {
                     avatar ? 
                     (<img 
-                      src={URL.createObjectURL} 
+                      src={URL.createObjectURL(avatar)} 
                       alt="avatar"
                       className='h-full w-full object-cover rounded-full'
                     />):

@@ -49,11 +49,11 @@ const userSchema = new mongoose.Schema({
   avatar:{
     public_id: {
       type: String,
-      required: true,
+      required: false,//change it later to TRUE
     },
     url: {
       type: String,
-      required: true,
+      required: false,//change it later to TRUE
     },
  },
  createdAt:{
