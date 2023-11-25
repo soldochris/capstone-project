@@ -5,6 +5,7 @@ import styles from "../../styles/styles";
 import {Link} from "react-router-dom";
 import axios from "axios";
 import {server} from "../../server.js";
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
   const [email,setEmail] = useState("");
@@ -29,10 +30,15 @@ const SignUp = () => {
     newForm.append("email", email);
     newForm.append("password", password);
 
-    axios.post(`${server}/user/create-user`, newForm, config).then((res)=>{
-      console.log(res);
+    axios.post(`${server}/user/create-user`, newForm, config)
+    .then((res)=>{
+      toast.success(res.data.message);
+      setName("");
+      setEmail("");
+      setPassword("");
+      setAvatar();
     }).catch((err)=>{
-      console.log(err);
+      toast.error(err.response.data.message);
     });
   };
   return (
