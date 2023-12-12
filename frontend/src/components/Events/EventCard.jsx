@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addTocart } from "../../redux/actions/cart";
 import { toast } from "react-toastify";
 
-const EventCard = () => {
+const EventCard = ({active}) => {
   //const { cart } = useSelector((state) => state.cart);
   //const dispatch = useDispatch();
 
@@ -26,7 +26,7 @@ const EventCard = () => {
   // }
   return (
     <div
-      className={`w-full block bg-white rounded-lg lg:flex p-2`}
+      className={`w-full block bg-white rounded-lg ${active ? "unset" : "mb-12"} lg:flex p-2`}
     >
       <div className="w-full lg:-w[50%] m-auto">
         <img src="https://images-na.ssl-images-amazon.com/images/W/MEDIAX_792452-T2/images/I/51uD1lmrV8L._AC_UL600_SR600,600_.jpg" alt="" />
