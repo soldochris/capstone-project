@@ -229,13 +229,13 @@ export const categoriesData = [
     title: "Gifts",
     subTitle: "",
     image_Url:
-      "https://securecdn.pymnts.com/wp-content/uploads/2014/11/Gifts-Photo-700x489.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Gift_Flat_Icon_Vector.svg/1024px-Gift_Flat_Icon_Vector.svg.png",
   },
   {
     id: 7,
     title: "Pet Care",
     subTitle: "",
-    image_Url: "https://cdn.openpr.com/T/c/Tc15444071_g.jpg",
+    image_Url: "https://cdn-icons-png.flaticon.com/512/8211/8211733.png",
   },
   {
     id: 8,
@@ -271,11 +271,11 @@ export const productData = [
     image_Url: [
       {
         public_id: "test",
-        url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
+        url: "https://tpc.ucf.edu/wp-content/uploads/sites/5/2020/03/macbook-air-spacegray-gallery2-20220606.png",
       },
       {
         public_id: "test",
-        url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
+        url: "https://tpc.ucf.edu/wp-content/uploads/sites/5/2020/03/macbook-air-spacegray-gallery2-20220606.png",
       },
     ],
     shop: {
@@ -331,11 +331,11 @@ export const productData = [
     image_Url: [
       {
         public_id: "test",
-        url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
+        url: "https://f.hubspotusercontent00.net/hubfs/6155957/MacBook_Pro_M1_Top.jpg",
       },
       {
         public_id: "test",
-        url: "https://www.istorebangladesh.com/images/thumbs/0000286_macbook-pro-m1_550.png",
+        url: "https://f.hubspotusercontent00.net/hubfs/6155957/MacBook_Pro_M1_Top.jpg",
       },
     ],
     shop: {

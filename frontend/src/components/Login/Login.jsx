@@ -20,7 +20,8 @@ const Login = () => {
       password
     },{withCredentials: true}).then((res)=>{
       toast.success("You logged to your account 😁");
-      navigate("/")
+      navigate("/");
+      window.location.reload();
     }).catch((err)=>{
       toast.error(err.response.data.message);
     });
